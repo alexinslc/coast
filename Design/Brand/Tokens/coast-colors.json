@@ -1,0 +1,13 @@
+{
+  "brand": "Coast",
+  "version": "1.0",
+  "colors": {
+    "midnightInk": "#10143D",
+    "deepIndigo": "#111442",
+    "coastViolet": "#9A7CFF",
+    "momentumBlue": "#6068FF",
+    "deepCurrent": "#2F49F5",
+    "mist": "#EEF1F8",
+    "white": "#FFFFFF"
+  }
+}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 160" role="img" aria-labelledby="title desc">
+  <title id="title">Coast horizontal logo</title>
+  <desc id="desc">Coast momentum mark beside the Coast wordmark.</desc>
+  <g transform="translate(20 32)">
+    <rect x="16" y="10" width="30" height="16" rx="8" fill="#9A7CFF"/>
+    <rect x="16" y="40" width="58" height="16" rx="8" fill="#6068FF"/>
+    <rect x="16" y="70" width="88" height="16" rx="8" fill="#2F49F5"/>
+  </g>
+  <text x="164" y="113" fill="#10143D" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif" font-size="92" font-weight="570" letter-spacing="-3">Coast</text>
+</svg>

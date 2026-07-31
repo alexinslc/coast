@@ -1,0 +1,15 @@
+cask "coast" do
+  version "VERSION"
+  sha256 "SHA256"
+
+  url "https://github.com/alexinslc/coast/releases/download/v#{version}/Coast-#{version}-macOS.zip"
+  name "Coast"
+  desc "Smooth conventional mouse-wheel scrolling"
+  homepage "https://github.com/alexinslc/coast"
+
+  depends_on macos: ">= :ventura"
+
+  app "Coast.app"
+
+  zap trash: "~/Library/Preferences/com.alexinslc.coast.plist"
+end

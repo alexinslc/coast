@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Coast app icon</title>
+  <desc id="desc">Three luminous momentum strokes on a midnight indigo macOS app icon.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#211A61"/>
+      <stop offset="0.52" stop-color="#111442"/>
+      <stop offset="1" stop-color="#080B28"/>
+    </linearGradient>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#AE8CFF"/>
+      <stop offset="1" stop-color="#8C73FF"/>
+    </linearGradient>
+    <linearGradient id="middle" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7072FF"/>
+      <stop offset="1" stop-color="#515DFF"/>
+    </linearGradient>
+    <linearGradient id="bottom" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3D55FF"/>
+      <stop offset="1" stop-color="#2442E9"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="24" stdDeviation="28" flood-color="#05071A" flood-opacity="0.34"/>
+    </filter>
+  </defs>
+  <rect x="64" y="64" width="896" height="896" rx="205" fill="url(#bg)" filter="url(#shadow)"/>
+  <rect x="64.5" y="64.5" width="895" height="895" rx="204.5" fill="none" stroke="#5B58A8" stroke-opacity="0.28"/>
+  <rect x="244" y="308" width="244" height="76" rx="38" fill="url(#top)"/>
+  <rect x="244" y="474" width="390" height="76" rx="38" fill="url(#middle)"/>
+  <rect x="244" y="640" width="544" height="76" rx="38" fill="url(#bottom)"/>
+</svg>

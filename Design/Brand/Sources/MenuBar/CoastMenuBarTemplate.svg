@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" role="img" aria-labelledby="title desc">
+  <title id="title">Coast menu-bar template icon</title>
+  <desc id="desc">A monochrome 18-point version of the Coast momentum mark.</desc>
+  <g fill="#000000">
+    <rect x="2.75" y="4" width="5.6" height="2" rx="1"/>
+    <rect x="2.75" y="8" width="9" height="2" rx="1"/>
+    <rect x="2.75" y="12" width="12.5" height="2" rx="1"/>
+  </g>
+</svg>
