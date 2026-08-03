@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://alexinslc.github.io/coast/sitemap.xml
+Sitemap: https://alexinslc.com/coast/sitemap.xml

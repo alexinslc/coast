@@ -12,7 +12,7 @@
 </p>
 
 <p align="center">
-  <a href="https://alexinslc.github.io/coast/">Website</a> ·
+  <a href="https://alexinslc.com/coast/">Website</a> ·
   <a href="https://github.com/alexinslc/coast/releases/latest">Download</a> ·
   <a href="PRIVACY.md">Privacy</a> ·
   <a href="TESTING.md">Testing</a>
@@ -63,7 +63,7 @@ brew install --cask alexinslc/tap/coast
 
 Alternatively, download the ZIP from the [latest GitHub Release](https://github.com/alexinslc/coast/releases/latest) and copy `Coast.app` to `/Applications`.
 
-Visit the [Coast website](https://alexinslc.github.io/coast/) for the product overview and current download link.
+Visit the [Coast website](https://alexinslc.com/coast/) for the product overview and current download link.
 
 Then:
 
