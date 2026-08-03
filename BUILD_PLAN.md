@@ -1,6 +1,6 @@
 # Coast for macOS — Build Plan
 
-Status: version 0.1.0 build 3 is the verified release artifact. All 29 tests, live duplicate-launch checks, visual inspection, Release analysis, and the universal Release build pass. Apple accepted the Developer ID archive with no issues; its ticket is stapled, and the final quarantined ZIP passes checksum, strict signature, architecture, stapler, and Gatekeeper checks. The remaining release gates are the expanded manual compatibility matrix and verification of the exact GitHub/Homebrew distribution path.
+Status: version 0.1.0 build 3 is published and verified. All 29 tests, live duplicate-launch checks, visual inspection, Release analysis, and the universal Release build pass. Apple accepted the Developer ID archive with no issues; its ticket is stapled, and the final quarantined ZIP passes checksum, strict signature, architecture, stapler, and Gatekeeper checks. The exact public GitHub asset and Homebrew Cask also pass checksum, strict online audit, installation, first-launch, single-instance, and network-observation checks on the development Mac. Remaining work is the expanded manual compatibility matrix and another-Mac verification when available.
 
 Last reviewed: 2026-08-02
 

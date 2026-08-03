@@ -7,7 +7,7 @@ cask "coast" do
   desc "Smooth conventional mouse-wheel scrolling"
   homepage "https://github.com/alexinslc/coast"
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
 
   app "Coast.app"
 

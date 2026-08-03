@@ -27,10 +27,19 @@ Build-ready icons live in `Coast/Resources/Assets.xcassets`. Editable brand sour
 
 ## Install and use
 
-1. Copy `Coast.app` to `/Applications`.
-2. Open Coast and follow the three-step welcome flow. It explains what Coast changes, offers to open Coast at login, and guides you through the macOS Accessibility prompt.
-3. Look for the Coast mark in the menu bar; Coast has no Dock icon.
-4. Adjust speed, smoothness, direction, Accessibility access, or Open at Login from Settings.
+Install the signed and notarized release with Homebrew:
+
+```sh
+brew install --cask alexinslc/tap/coast
+```
+
+Alternatively, download the ZIP from the [latest GitHub Release](https://github.com/alexinslc/coast/releases/latest) and copy `Coast.app` to `/Applications`.
+
+Then:
+
+1. Open Coast and follow the three-step welcome flow. It explains what Coast changes, offers to open Coast at login, and guides you through the macOS Accessibility prompt.
+2. Look for the Coast mark in the menu bar; Coast has no Dock icon.
+3. Adjust speed, smoothness, direction, Accessibility access, or Open at Login from Settings.
 
 Coast uses Apple's current Service Management API for Open at Login. It does not install a separate helper executable. If macOS says approval is required, use Coast's `Open Login Items…` button and approve Coast in System Settings.
 

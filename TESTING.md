@@ -116,11 +116,15 @@ The following checks passed for version 0.1.0, build 3, on August 2, 2026:
 - Apple notarization submission `5d76183b-8508-4f76-a78e-32a6206e4eb4` was accepted with no issues, and its ticket was stapled and validated.
 - The packaged ZIP's SHA-256 checksum passed. A freshly extracted copy was given a quarantine attribute, then passed strict signature validation, stapler validation, and Gatekeeper assessment as `Notarized Developer ID`.
 - Launching the quarantined Release copy twice settled to one process, retained the original process, and routed the second launch to the existing instance.
+- The exact public GitHub Release asset was downloaded independently and matched the published SHA-256 checksum.
+- The public Homebrew Cask passed `brew style` and the strict online audit, installed that asset into `/Applications`, and produced the expected version 0.1.0 build 3 universal app. The installed copy passed strict signature, stapler, and Gatekeeper checks.
+- After the normal Homebrew first-launch confirmation, launching the installed app twice settled to one process and retained the original single-instance lock owner.
+- A three-sample observation of the running installed app showed no internet sockets and no network bytes sent or received.
 - Bundle inspection found only the Coast executable, Info.plist, icon/asset resources, package metadata, and signature resources. The executable links only Apple system frameworks and Swift runtime libraries.
 - A source scan found no networking or web-view API references.
 - The current tree, reachable Git history, unreachable local Git blobs, ignored distribution output, and final app were scanned for private-key, credential-file, password, and token markers; none were found. Common credential and Apple signing-file extensions are explicitly ignored.
 
-Still required before calling the public distribution path verified: download the exact GitHub Release asset, repeat the quarantine/launch check on another Mac if available, install that asset through the Homebrew Cask, observe the running Release app for network connections, and complete any remaining hardware/application matrix entries.
+The public GitHub/Homebrew distribution path is verified on the development Mac. Remaining compatibility work is to repeat the quarantine/launch check on another Mac if available and complete any untested hardware, application, display, permission-revocation, and sleep/wake matrix entries.
 
 ## Release checks
 
