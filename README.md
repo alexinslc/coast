@@ -1,8 +1,36 @@
-# Coast
+<h1 align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="Design/Brand/Sources/Logo/coast-lockup-horizontal-reversed.svg">
+    <source media="(prefers-color-scheme: light)" srcset="Design/Brand/Sources/Logo/coast-lockup-horizontal.svg">
+    <img alt="Coast" src="Design/Brand/Sources/Logo/coast-lockup-horizontal.svg" width="310">
+  </picture>
+</h1>
 
-Coast is a small, open-source macOS menu-bar app that makes a conventional mouse wheel scroll smoothly while leaving trackpads and other continuous scrolling unchanged.
+<p align="center">
+  <strong>Smooth mouse-wheel scrolling for macOS.</strong><br>
+  Turn every wheel tick into a fluid, adjustable glide—without changing the natural feel of your trackpad or Magic Mouse.
+</p>
 
-Discrete wheel ticks use a continuous cubic ease-out animation. The default 700 ms glide is tuned against an MX Master 3S and can be adjusted from 200–1,200 ms in Settings.
+<p align="center">
+  <a href="https://alexinslc.github.io/coast/">Website</a> ·
+  <a href="https://github.com/alexinslc/coast/releases/latest">Download</a> ·
+  <a href="PRIVACY.md">Privacy</a> ·
+  <a href="TESTING.md">Testing</a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/alexinslc/coast/releases/latest"><img alt="Latest release" src="https://img.shields.io/github/v/release/alexinslc/coast?style=flat-square&amp;color=6068FF&amp;label=release"></a>
+  <img alt="macOS 13 or later" src="https://img.shields.io/badge/macOS-13%2B-10143D?style=flat-square&amp;logo=apple&amp;logoColor=white">
+  <a href="LICENSE"><img alt="MIT license" src="https://img.shields.io/badge/license-MIT-2F49F5?style=flat-square"></a>
+</p>
+
+Coast is a small, native, open-source menu-bar app for conventional mouse wheels. Discrete wheel ticks use a continuous cubic ease-out animation; continuous trackpad and Magic Mouse input passes through unchanged. The default 700 ms glide is tuned against an MX Master 3S and can be adjusted from 200–1,200 ms in Settings.
+
+## Why Coast
+
+- **Fluid, responsive motion:** repeated wheel ticks build naturally, while reversals remain immediate.
+- **Native where it matters:** trackpads and other continuous scrolling retain Apple’s original behavior.
+- **Private by construction:** no account, analytics, network access, updater, helper process, or third-party dependencies.
 
 ## Requirements
 
@@ -34,6 +62,8 @@ brew install --cask alexinslc/tap/coast
 ```
 
 Alternatively, download the ZIP from the [latest GitHub Release](https://github.com/alexinslc/coast/releases/latest) and copy `Coast.app` to `/Applications`.
+
+Visit the [Coast website](https://alexinslc.github.io/coast/) for the product overview and current download link.
 
 Then:
 

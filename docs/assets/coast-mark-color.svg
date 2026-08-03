@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 96" role="img" aria-labelledby="title desc">
+  <title id="title">Coast momentum mark</title>
+  <desc id="desc">Three progressively longer rounded strokes representing smooth scrolling momentum.</desc>
+  <rect x="16" y="10" width="30" height="16" rx="8" fill="#9A7CFF"/>
+  <rect x="16" y="40" width="58" height="16" rx="8" fill="#6068FF"/>
+  <rect x="16" y="70" width="88" height="16" rx="8" fill="#2F49F5"/>
+</svg>

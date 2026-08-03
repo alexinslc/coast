@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Coast — Smooth mouse-wheel scrolling for macOS</title>
+    <meta name="description" content="Coast turns discrete mouse-wheel ticks into a smooth, adjustable glide on macOS while leaving trackpads and other continuous scrolling untouched.">
+    <meta name="theme-color" content="#111442">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://alexinslc.github.io/coast/">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="styles.css">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Coast">
+    <meta property="og:title" content="Coast — Smooth mouse-wheel scrolling for macOS">
+    <meta property="og:description" content="Turn every wheel tick into a smooth glide. Native, private, and open source.">
+    <meta property="og:url" content="https://alexinslc.github.io/coast/">
+    <meta property="og:image" content="https://alexinslc.github.io/coast/assets/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Coast — Smooth mouse-wheel scrolling for macOS">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Coast — Smooth mouse-wheel scrolling for macOS">
+    <meta name="twitter:description" content="Turn every wheel tick into a smooth glide. Native, private, and open source.">
+    <meta name="twitter:image" content="https://alexinslc.github.io/coast/assets/og.png">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Coast",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "macOS 13 Ventura or later",
+        "description": "Smooth, adjustable scrolling for conventional mouse wheels on macOS.",
+        "downloadUrl": "https://github.com/alexinslc/coast/releases/latest",
+        "softwareVersion": "0.1.0",
+        "license": "https://github.com/alexinslc/coast/blob/main/LICENSE",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#top" aria-label="Coast home">
+          <img src="assets/coast-lockup-reversed.svg" alt="Coast">
+        </a>
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#features">Features</a>
+          <a href="#how-it-works">How it works</a>
+          <a href="https://github.com/alexinslc/coast/blob/main/PRIVACY.md">Privacy</a>
+          <a class="nav-github" href="https://github.com/alexinslc/coast">View on GitHub <span aria-hidden="true">↗</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="top">
+        <div class="hero-glow hero-glow-one" aria-hidden="true"></div>
+        <div class="hero-glow hero-glow-two" aria-hidden="true"></div>
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Open source · macOS 13+</p>
+            <h1>Turn every wheel tick into a <span>smooth glide.</span></h1>
+            <p class="hero-summary">Coast makes conventional mouse-wheel scrolling feel fluid and intentional—without changing the natural feel of your trackpad or Magic Mouse.</p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="https://github.com/alexinslc/coast/releases/latest">
+                Download Coast
+                <span aria-hidden="true">↓</span>
+              </a>
+              <a class="button button-secondary" href="https://github.com/alexinslc/coast">
+                View source
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <button class="install-command" type="button" data-copy="brew install --cask alexinslc/tap/coast" aria-label="Copy Homebrew install command">
+              <span class="prompt" aria-hidden="true">›</span>
+              <code class="command-text">brew install --cask alexinslc/tap/coast</code>
+              <span class="copy-label" aria-hidden="true">Copy</span>
+            </button>
+
+            <p class="trust-line">Signed with Developer ID · Notarized by Apple · Apple Silicon + Intel</p>
+          </div>
+
+          <div class="hero-art">
+            <div class="orbit orbit-one" aria-hidden="true"></div>
+            <div class="orbit orbit-two" aria-hidden="true"></div>
+            <div class="momentum-trail" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="app-icon-wrap">
+              <div class="icon-halo" aria-hidden="true"></div>
+              <img src="assets/coast-app-icon.png" alt="Coast app icon" width="1024" height="1024">
+            </div>
+            <div class="float-card float-card-top">
+              <span class="float-icon" aria-hidden="true">⌁</span>
+              <span><strong>700 ms</strong> smooth glide</span>
+            </div>
+            <div class="float-card float-card-bottom">
+              <span class="float-check" aria-hidden="true">✓</span>
+              <span>Trackpads stay native</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof" aria-label="Coast at a glance">
+        <div class="shell proof-grid">
+          <div><strong>Local only</strong><span>No analytics or networking</span></div>
+          <div><strong>Native AppKit</strong><span>Lightweight menu-bar utility</span></div>
+          <div><strong>Adjustable</strong><span>Distance, duration, and direction</span></div>
+          <div><strong>Open source</strong><span>MIT licensed on GitHub</span></div>
+        </div>
+      </section>
+
+      <section class="section features" id="features">
+        <div class="shell">
+          <div class="section-heading">
+            <p class="eyebrow eyebrow-dark">A calmer way to scroll</p>
+            <h2>Made for wheels.<br>Respectful of everything else.</h2>
+            <p>Coast smooths the input that needs it and steps aside when macOS is already receiving continuous motion.</p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card feature-card-large">
+              <div class="feature-visual easing-visual" aria-hidden="true">
+                <span class="tick tick-one"></span>
+                <span class="tick tick-two"></span>
+                <span class="tick tick-three"></span>
+                <span class="motion-line"></span>
+                <span class="motion-dot"></span>
+              </div>
+              <div class="feature-copy">
+                <span class="feature-number">01</span>
+                <h3>Momentum, not mush</h3>
+                <p>Discrete wheel ticks become a responsive cubic ease-out animation. Repeated input builds naturally, and direction changes remain immediate.</p>
+              </div>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon trackpad-icon" aria-hidden="true"><span></span></div>
+              <span class="feature-number">02</span>
+              <h3>Your trackpad stays yours</h3>
+              <p>Continuous trackpad and Magic Mouse events pass through unchanged, preserving Apple’s native scrolling behavior.</p>
+            </article>
+
+            <article class="feature-card feature-card-ink">
+              <div class="privacy-rings" aria-hidden="true"><span></span><span></span><span></span></div>
+              <span class="feature-number">03</span>
+              <h3>Private by construction</h3>
+              <p>No account, analytics, network access, updater, helper process, or third-party dependencies. Your preferences stay on your Mac.</p>
+            </article>
+
+            <article class="feature-card feature-card-wide">
+              <div class="settings-preview" aria-hidden="true">
+                <div class="setting-row"><span>Distance</span><i><b class="distance-value"></b></i><em>2.0×</em></div>
+                <div class="setting-row"><span>Smoothness</span><i><b class="smoothness-value"></b></i><em>700 ms</em></div>
+                <div class="setting-row"><span>Direction</span><i class="toggle"><b></b></i><em>Natural</em></div>
+              </div>
+              <div class="feature-copy">
+                <span class="feature-number">04</span>
+                <h3>Tuned to your hand</h3>
+                <p>Adjust scroll distance, glide duration, and direction independently. Coast remembers the setup that feels right to you.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process" id="how-it-works">
+        <div class="shell process-grid">
+          <div class="process-intro">
+            <p class="eyebrow eyebrow-dark">Up and running</p>
+            <h2>Three small steps.<br>One smoother mouse.</h2>
+            <p>Coast lives quietly in your menu bar and asks only for the permission required to replace discrete wheel events.</p>
+          </div>
+          <ol class="step-list">
+            <li>
+              <span class="step-number">1</span>
+              <div><h3>Install Coast</h3><p>Use Homebrew or download the signed, notarized app from GitHub.</p></div>
+            </li>
+            <li>
+              <span class="step-number">2</span>
+              <div><h3>Grant Accessibility</h3><p>macOS needs this permission so Coast can replace wheel ticks with smooth scrolling.</p></div>
+            </li>
+            <li>
+              <span class="step-number">3</span>
+              <div><h3>Make it yours</h3><p>Choose your distance, smoothness, direction, and whether Coast opens at login.</p></div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section compatibility">
+        <div class="shell compatibility-card">
+          <div>
+            <img class="compatibility-mark" src="assets/coast-mark-color.svg" alt="" width="120" height="96">
+            <p class="eyebrow eyebrow-dark">Coast 0.1.0</p>
+            <h2>Small utility.<br>Real Mac app.</h2>
+          </div>
+          <div class="compatibility-details">
+            <div><span>Requires</span><strong>macOS 13 Ventura or later</strong></div>
+            <div><span>Runs on</span><strong>Apple Silicon and Intel</strong></div>
+            <div><span>Distributed with</span><strong>Developer ID + Apple notarization</strong></div>
+            <div><span>License</span><strong>MIT · Free and open source</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta">
+        <div class="shell final-cta-inner">
+          <img src="assets/coast-lockup-reversed.svg" alt="Coast" width="620" height="160">
+          <h2>Let your scroll wheel coast.</h2>
+          <p>Give conventional mouse scrolling the fluid motion it always deserved.</p>
+          <div class="hero-actions final-actions">
+            <a class="button button-primary" href="https://github.com/alexinslc/coast/releases/latest">Download Coast <span aria-hidden="true">↓</span></a>
+            <a class="button button-secondary" href="https://github.com/alexinslc/coast">Star on GitHub <span aria-hidden="true">☆</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <a class="footer-brand" href="#top" aria-label="Back to top"><img src="assets/coast-lockup-reversed.svg" alt="Coast"></a>
+        <p>Built for smoother days on macOS.</p>
+        <nav aria-label="Footer navigation">
+          <a href="https://github.com/alexinslc/coast">GitHub</a>
+          <a href="https://github.com/alexinslc/coast/releases">Releases</a>
+          <a href="https://github.com/alexinslc/coast/blob/main/PRIVACY.md">Privacy</a>
+          <a href="https://github.com/alexinslc/coast/blob/main/LICENSE">License</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="site.js" defer></script>
+  </body>
+</html>
