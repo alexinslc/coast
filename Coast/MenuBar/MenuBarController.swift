@@ -16,6 +16,16 @@ enum CoastRuntimeStatus: Equatable {
         case .tapUnavailable: return "Scroll Engine Unavailable — Retry"
         }
     }
+
+    var statusItemDescription: String {
+        switch self {
+        case .disabled: return "Off"
+        case .permissionRequired: return "Accessibility Permission Required"
+        case .starting: return "Starting"
+        case .active: return "Active"
+        case .tapUnavailable: return "Scroll Engine Unavailable"
+        }
+    }
 }
 
 @MainActor
@@ -36,9 +46,14 @@ final class MenuBarController: NSObject {
     override init() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
         super.init()
+        statusItem.autosaveName = "CoastStatusItem"
 
         if let button = statusItem.button {
-            if let image = NSImage(named: "CoastMenuBarTemplate") {
+            button.imagePosition = .imageOnly
+            button.imageScaling = .scaleProportionallyDown
+            button.setAccessibilityLabel("Coast")
+
+            if let image = NSImage(named: "CoastMenuBarTemplate")?.copy() as? NSImage {
                 image.isTemplate = true
                 image.size = NSSize(width: 18, height: 18)
                 image.accessibilityDescription = "Coast"
@@ -55,6 +70,7 @@ final class MenuBarController: NSObject {
         }
 
         let menu = NSMenu()
+        menu.autoenablesItems = false
         enabledItem.target = self
         enabledItem.action = #selector(toggleSelected)
         menu.addItem(enabledItem)
@@ -98,6 +114,8 @@ final class MenuBarController: NSObject {
         enabledItem.state = enabled ? .on : .off
         statusMenuItem.title = runtimeStatus.title
         statusMenuItem.isEnabled = runtimeStatus == .permissionRequired || runtimeStatus == .tapUnavailable
+        statusItem.button?.toolTip = "Coast — \(runtimeStatus.statusItemDescription)"
+        statusItem.button?.setAccessibilityHelp(runtimeStatus.title)
 
         switch runtimeStatus {
         case .permissionRequired, .tapUnavailable:

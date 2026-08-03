@@ -21,7 +21,7 @@ xcodebuild \
   build
 ```
 
-The app is written in Swift and AppKit and has no third-party dependencies. Development builds use local/ad-hoc signing with a stable, bundle-identifier-based development requirement so Accessibility approval survives ordinary rebuilds. Open `Coast.xcodeproj` in Xcode to run the app and grant Accessibility access when prompted. Test Open at Login from a copy installed in `/Applications`; macOS may not register a login item for an app running directly from DerivedData.
+The app is written in Swift and AppKit and has no third-party dependencies. Development builds use local/ad-hoc signing with a stable, bundle-identifier-based development requirement so Accessibility approval survives ordinary rebuilds. Open `Coast.xcodeproj` in Xcode to run the app and grant Accessibility access when prompted. Coast prevents separately built copies with the same bundle identifier from running simultaneously, so quit an installed copy before running from Xcode. For deliberate multi-instance debugging, add `--allow-multiple-instances` to the Debug scheme. Test Open at Login from a copy installed in `/Applications`; macOS may not register a login item for an app running directly from DerivedData.
 
 Build-ready icons live in `Coast/Resources/Assets.xcassets`. Editable brand sources, generated exports, usage guidance, and cross-platform color tokens live separately in `Design/Brand` so design artifacts are not copied into the application bundle.
 

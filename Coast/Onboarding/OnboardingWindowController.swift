@@ -31,13 +31,14 @@ final class OnboardingWindowController: NSWindowController, NSWindowDelegate {
 
     init() {
         let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 560, height: 500),
+            contentRect: NSRect(x: 0, y: 0, width: 560, height: 450),
             styleMask: [.titled, .closable],
             backing: .buffered,
             defer: false
         )
         window.title = "Welcome to Coast"
         window.isReleasedWhenClosed = false
+        window.tabbingMode = .disallowed
         window.center()
 
         super.init(window: window)
@@ -109,7 +110,7 @@ final class OnboardingWindowController: NSWindowController, NSWindowDelegate {
         guard let contentView = window.contentView else { return }
 
         let appIcon = NSImageView()
-        appIcon.image = NSWorkspace.shared.icon(forFile: Bundle.main.bundlePath)
+        appIcon.image = NSApp.applicationIconImage
         appIcon.imageScaling = .scaleProportionallyUpOrDown
         appIcon.translatesAutoresizingMaskIntoConstraints = false
 
@@ -129,7 +130,7 @@ final class OnboardingWindowController: NSWindowController, NSWindowDelegate {
         brandStack.spacing = 15
 
         progressLabel.alignment = .right
-        progressLabel.textColor = .tertiaryLabelColor
+        progressLabel.textColor = .secondaryLabelColor
         progressLabel.font = .systemFont(ofSize: 12, weight: .medium)
 
         let header = NSStackView(views: [brandStack, NSView(), progressLabel])
@@ -165,7 +166,7 @@ final class OnboardingWindowController: NSWindowController, NSWindowDelegate {
             appIcon.heightAnchor.constraint(equalToConstant: 64),
             header.widthAnchor.constraint(equalToConstant: 488),
             pageContainer.widthAnchor.constraint(equalToConstant: 488),
-            pageContainer.heightAnchor.constraint(equalToConstant: 286),
+            pageContainer.heightAnchor.constraint(equalToConstant: 236),
             footer.widthAnchor.constraint(equalToConstant: 488),
             rootStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 36),
             rootStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -36),

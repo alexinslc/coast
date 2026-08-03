@@ -62,7 +62,9 @@ final class AppController {
         return controller
     }()
 
-    private var observers: [NSObjectProtocol] = []
+    private var applicationObservers: [NSObjectProtocol] = []
+    private var workspaceObservers: [NSObjectProtocol] = []
+    private var distributedObservers: [NSObjectProtocol] = []
     private var isSleeping = false
     private var tapUnavailable = false
 
@@ -96,11 +98,17 @@ final class AppController {
     }
 
     func shutdown() {
-        observers.forEach { observer in
-            NotificationCenter.default.removeObserver(observer)
-            NSWorkspace.shared.notificationCenter.removeObserver(observer)
-        }
-        observers.removeAll()
+        applicationObservers.forEach(NotificationCenter.default.removeObserver)
+        applicationObservers.removeAll()
+
+        let workspaceCenter = NSWorkspace.shared.notificationCenter
+        workspaceObservers.forEach(workspaceCenter.removeObserver)
+        workspaceObservers.removeAll()
+
+        let distributedCenter = DistributedNotificationCenter.default()
+        distributedObservers.forEach(distributedCenter.removeObserver)
+        distributedObservers.removeAll()
+
         permissionManager.stopMonitoring()
         eventTap.stop()
         physicsEngine.cancelSynchronously()
@@ -131,14 +139,14 @@ final class AppController {
 
     private func configureObservers() {
         let center = NotificationCenter.default
-        observers.append(
+        applicationObservers.append(
             center.addObserver(forName: .coastSettingsDidChange, object: settingsStore, queue: .main) { [weak self] _ in
                 Task { @MainActor in
                     self?.settingsChanged()
                 }
             }
         )
-        observers.append(
+        applicationObservers.append(
             center.addObserver(forName: NSApplication.didBecomeActiveNotification, object: nil, queue: .main) { [weak self] _ in
                 Task { @MainActor in
                     self?.permissionManager.refresh()
@@ -149,24 +157,37 @@ final class AppController {
         )
 
         let workspaceCenter = NSWorkspace.shared.notificationCenter
-        observers.append(
+        workspaceObservers.append(
             workspaceCenter.addObserver(forName: NSWorkspace.willSleepNotification, object: nil, queue: .main) { [weak self] _ in
                 Task { @MainActor in
                     self?.prepareForSleep()
                 }
             }
         )
-        observers.append(
+        workspaceObservers.append(
             workspaceCenter.addObserver(forName: NSWorkspace.didWakeNotification, object: nil, queue: .main) { [weak self] _ in
                 Task { @MainActor in
                     self?.recoverAfterWake()
                 }
             }
         )
-        observers.append(
+        workspaceObservers.append(
             workspaceCenter.addObserver(forName: NSWorkspace.sessionDidBecomeActiveNotification, object: nil, queue: .main) { [weak self] _ in
                 Task { @MainActor in
                     self?.recoverAfterWake()
+                }
+            }
+        )
+
+        let distributedCenter = DistributedNotificationCenter.default()
+        distributedObservers.append(
+            distributedCenter.addObserver(
+                forName: SingleInstanceCoordinator.showSettingsNotification,
+                object: nil,
+                queue: .main
+            ) { [weak self] _ in
+                Task { @MainActor in
+                    self?.showSettings()
                 }
             }
         )
@@ -237,7 +258,7 @@ final class AppController {
         }
     }
 
-    private func showSettings() {
+    func showSettings() {
         settingsWindowController.updatePermission(isTrusted: permissionManager.isTrusted)
         settingsWindowController.updateLaunchAtLogin(status: launchAtLoginManager.status)
         settingsWindowController.showWindow(nil)

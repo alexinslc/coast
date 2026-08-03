@@ -104,3 +104,20 @@ final class SettingsStoreTests: XCTestCase {
         XCTAssertFalse(LaunchAtLoginStatus.unavailable.isRegistered)
     }
 }
+
+final class SingleInstanceCoordinatorTests: XCTestCase {
+    func testLockAllowsOnlyOneCoordinatorAtATime() {
+        let lockURL = FileManager.default.temporaryDirectory
+            .appendingPathComponent("SingleInstanceCoordinatorTests.\(UUID().uuidString).lock")
+        let first = SingleInstanceCoordinator(lockURL: lockURL)
+        let second = SingleInstanceCoordinator(lockURL: lockURL)
+
+        XCTAssertTrue(first.acquireLock())
+        XCTAssertFalse(second.acquireLock())
+
+        first.releaseLock()
+        XCTAssertTrue(second.acquireLock())
+        second.releaseLock()
+        try? FileManager.default.removeItem(at: lockURL)
+    }
+}

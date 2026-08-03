@@ -25,13 +25,15 @@ final class SettingsWindowController: NSWindowController {
         self.settingsStore = settingsStore
 
         let window = NSWindow(
-            contentRect: NSRect(x: 0, y: 0, width: 580, height: 620),
+            contentRect: NSRect(x: 0, y: 0, width: 580, height: 560),
             styleMask: [.titled, .closable, .miniaturizable],
             backing: .buffered,
             defer: false
         )
         window.title = "Coast Settings"
         window.isReleasedWhenClosed = false
+        window.tabbingMode = .disallowed
+        window.setFrameAutosaveName("CoastSettingsWindow")
         window.center()
 
         super.init(window: window)
@@ -108,7 +110,7 @@ final class SettingsWindowController: NSWindowController {
         guard let contentView = window.contentView else { return }
 
         let appIcon = NSImageView()
-        appIcon.image = NSWorkspace.shared.icon(forFile: Bundle.main.bundlePath)
+        appIcon.image = NSApp.applicationIconImage
         appIcon.imageScaling = .scaleProportionallyUpOrDown
         appIcon.translatesAutoresizingMaskIntoConstraints = false
 
@@ -207,9 +209,9 @@ final class SettingsWindowController: NSWindowController {
 
         let stack = NSStackView(views: [
             header,
-            sectionBox(title: "Scrolling", content: scrollingContent, height: 176),
-            sectionBox(title: "General", content: generalContent, height: 104),
-            sectionBox(title: "Accessibility", content: permissionRow, height: 78),
+            sectionBox(title: "Scrolling", content: scrollingContent, height: 146),
+            sectionBox(title: "General", content: generalContent, height: 94),
+            sectionBox(title: "Accessibility", content: permissionRow, height: 70),
             footer
         ])
         stack.orientation = .vertical

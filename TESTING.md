@@ -58,7 +58,7 @@ The registration API can be verified without signing out. A true subsequent-logi
 
 On 2026-07-31, the Debug app was installed to `/Applications` and the following passed on the development Mac:
 
-- All 28 unit tests.
+- All 29 unit tests.
 - All three onboarding pages and the polished Settings window in the running AppKit app.
 - Login-item registration, unregistration, re-registration, and state persistence across an app restart.
 - Live detection of the currently granted Accessibility permission.
@@ -99,6 +99,7 @@ Scenarios:
 - Grant, revoke, and restore Accessibility permission
 - Sleep and wake
 - Quit and restart
+- Launch Coast twice, then launch a separately built copy with the same bundle identifier; verify only one process and one menu-bar item remain and the existing copy opens Settings
 - Multiple displays and changing frontmost windows
 - Several idle minutes while observing CPU use
 
@@ -116,6 +117,8 @@ The following checks passed for version 0.1.0, build 2, on August 2, 2026:
 - The packaged ZIP's SHA-256 checksum passed. A freshly extracted copy was given a quarantine attribute, then passed strict signature validation, stapler validation, and Gatekeeper assessment as `Notarized Developer ID`.
 - Bundle inspection found only the Coast executable, Info.plist, icon/asset resources, package metadata, and signature resources. The executable links only Apple system frameworks and Swift runtime libraries.
 - A source scan found no networking or web-view API references.
+
+Build 2 predates the single-instance and UI fixes and is preserved only as a successful release rehearsal. Do not publish it; create and verify build 3 or later from the current source first.
 
 Still required before calling the public distribution path verified: download the exact GitHub Release asset, repeat the quarantine/launch check on another Mac if available, install that asset through the Homebrew Cask, observe the running Release app for network connections, and complete any remaining hardware/application matrix entries.
 

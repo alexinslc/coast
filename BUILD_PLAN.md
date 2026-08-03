@@ -1,6 +1,6 @@
 # Coast for macOS — Build Plan
 
-Status: implementation and local release preparation complete. Version 0.1.0 build 2 passes all 28 tests and Xcode analysis; its universal Developer ID archive was accepted by Apple, stapled, packaged, and accepted by Gatekeeper after a fresh quarantined extraction. The remaining release gates are the expanded manual compatibility matrix and verification of the exact GitHub/Homebrew distribution path.
+Status: implementation and local release preparation complete. Version 0.1.0 build 2 passed all 28 tests and Xcode analysis; its universal Developer ID archive was accepted by Apple, stapled, packaged, and accepted by Gatekeeper after a fresh quarantined extraction. Post-candidate single-instance and UI fixes now pass all 29 tests, live duplicate-launch checks, visual inspection, Release analysis, and a universal Release build. Build 2 is preserved as a rehearsal and must be replaced by a newly notarized build before publication. The remaining release gates are that replacement archive, the expanded manual compatibility matrix, and verification of the exact GitHub/Homebrew distribution path.
 
 Last reviewed: 2026-08-02
 
