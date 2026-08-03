@@ -34,7 +34,7 @@ Build-ready icons live in `Coast/Resources/Assets.xcassets`. Editable brand sour
 
 Coast uses Apple's current Service Management API for Open at Login. It does not install a separate helper executable. If macOS says approval is required, use Coast's `Open Login Items…` button and approve Coast in System Settings.
 
-Public releases will be signed with Developer ID, notarized by Apple, and distributed through GitHub Releases and a Homebrew Cask. Never bypass a Gatekeeper warning for an artifact whose signature or notarization cannot be verified.
+Public releases are signed with Developer ID, notarized by Apple, and distributed through GitHub Releases and a Homebrew Cask. Never bypass a Gatekeeper warning for an artifact whose signature or notarization cannot be verified.
 
 ## Test
 
@@ -73,7 +73,7 @@ BUILD_NUMBER="1" \
 ./Scripts/build-release.sh 0.1.0
 ```
 
-The script also saves Apple's complete notarization log beside the ZIP and checksum in `dist/<version>/`; inspect it before publishing. Upload the ZIP and checksum to a matching immutable GitHub tag such as `v0.1.0`. Replace `VERSION` and `SHA256` in [Packaging/coast.rb.template](Packaging/coast.rb.template), commit the resulting `Casks/coast.rb` to the Homebrew tap, and test installation from that exact GitHub asset.
+The script also saves Apple's complete notarization log beside the ZIP and checksum in `dist/<version>/`; inspect it before publishing. Verify the checksum with `shasum -a 256 -c dist/<version>/Coast-<version>-macOS.zip.sha256`, then upload the ZIP and checksum to a matching immutable GitHub tag such as `v0.1.0`. Replace `VERSION` and `SHA256` in [Packaging/coast.rb.template](Packaging/coast.rb.template), commit the resulting `Casks/coast.rb` to the Homebrew tap, and test installation from that exact GitHub asset.
 
 ## Privacy
 

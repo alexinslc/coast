@@ -63,6 +63,7 @@ xcodebuild \
 app_path="$archive_path/Products/Applications/Coast.app"
 submission_zip="$temporary_dir/Coast-notarization.zip"
 release_zip="$output_dir/Coast-$release_version-macOS.zip"
+release_zip_name="${release_zip:t}"
 submission_result="$temporary_dir/Coast-notarization-result.json"
 notarization_log="$output_dir/Coast-$release_version-notarization-log.json"
 
@@ -95,7 +96,10 @@ xcrun stapler staple "$app_path"
 xcrun stapler validate "$app_path"
 
 ditto -c -k --sequesterRsrc --keepParent "$app_path" "$release_zip"
-shasum -a 256 "$release_zip" | tee "$release_zip.sha256"
+(
+  cd "$output_dir"
+  shasum -a 256 "$release_zip_name" | tee "$release_zip_name.sha256"
+)
 spctl --assess --type execute --verbose=2 "$app_path"
 
 print "Release artifact: $release_zip"

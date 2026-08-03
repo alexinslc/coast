@@ -1,8 +1,8 @@
 # Coast for macOS — Build Plan
 
-Status: product-polish implementation complete. Automated tests and running-app UI inspection pass; Open at Login is verified from `/Applications`. Full hands-on compatibility testing, user-controlled permission/session checks, and Developer ID notarization remain release gates.
+Status: implementation and local release preparation complete. Version 0.1.0 build 2 passes all 28 tests and Xcode analysis; its universal Developer ID archive was accepted by Apple, stapled, packaged, and accepted by Gatekeeper after a fresh quarantined extraction. The remaining release gates are the expanded manual compatibility matrix and verification of the exact GitHub/Homebrew distribution path.
 
-Last reviewed: 2026-07-31
+Last reviewed: 2026-08-02
 
 ## 1. Product goal
 
@@ -418,12 +418,12 @@ Confirmed:
 - Distribution: direct/outside the Mac App Store with App Sandbox disabled.
 - Public channels: GitHub Releases plus a Homebrew Cask.
 - Trust path: Developer ID signing, Hardened Runtime, Apple notarization, and a stapled ticket.
+- Release signing and notarization credentials are configured in the maintainer's Keychain. Version 0.1.0 build 2 was accepted by Apple under submission `6868b421-1aae-417c-a7c5-abbf8de7e092` and passed local Gatekeeper verification.
 
 The custom Coast application and menu-bar assets are integrated in the asset catalog; editable brand sources remain outside the application bundle in `Design/Brand`.
 
-The following are needed only before the first public release, not before implementation:
+The following are still needed before the first public release:
 
-- The Apple Developer team/Team ID and an available `Developer ID Application` certificate. Credentials must remain in the maintainer's Keychain or CI secrets and must never be committed.
 - Confirmation of the intended GitHub repository. The current proposed repository is `alexinslc/coast`.
 - Confirmation or creation of the initial Homebrew tap. The current proposal is `alexinslc/homebrew-tap`, with a `coast` cask.
 
