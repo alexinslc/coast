@@ -105,20 +105,20 @@ Scenarios:
 
 Record the exact macOS version, hardware, driver, display refresh rate, and application for each manual result. Do not mark unavailable hardware as passing; list it as unverified.
 
-## Verified 0.1.0 release candidate
+## Verified 0.1.0 release
 
-The following checks passed for version 0.1.0, build 2, on August 2, 2026:
+The following checks passed for version 0.1.0, build 3, on August 2, 2026:
 
-- All 28 unit tests passed.
+- All 29 unit tests passed, including the single-instance lock test.
 - Xcode's Release analyzer completed successfully. Its only toolchain message was the expected metadata notice that Coast has no App Intents dependency.
 - The archive contains native `arm64` and `x86_64` slices and targets macOS 13.0 or later.
 - The app has a timestamped Developer ID Application signature and Hardened Runtime. It has no embedded entitlements.
-- Apple notarization submission `6868b421-1aae-417c-a7c5-abbf8de7e092` was accepted with no issues, and its ticket was stapled and validated.
+- Apple notarization submission `5d76183b-8508-4f76-a78e-32a6206e4eb4` was accepted with no issues, and its ticket was stapled and validated.
 - The packaged ZIP's SHA-256 checksum passed. A freshly extracted copy was given a quarantine attribute, then passed strict signature validation, stapler validation, and Gatekeeper assessment as `Notarized Developer ID`.
+- Launching the quarantined Release copy twice settled to one process, retained the original process, and routed the second launch to the existing instance.
 - Bundle inspection found only the Coast executable, Info.plist, icon/asset resources, package metadata, and signature resources. The executable links only Apple system frameworks and Swift runtime libraries.
 - A source scan found no networking or web-view API references.
-
-Build 2 predates the single-instance and UI fixes and is preserved only as a successful release rehearsal. Do not publish it; create and verify build 3 or later from the current source first.
+- The current tree, reachable Git history, unreachable local Git blobs, ignored distribution output, and final app were scanned for private-key, credential-file, password, and token markers; none were found. Common credential and Apple signing-file extensions are explicitly ignored.
 
 Still required before calling the public distribution path verified: download the exact GitHub Release asset, repeat the quarantine/launch check on another Mac if available, install that asset through the Homebrew Cask, observe the running Release app for network connections, and complete any remaining hardware/application matrix entries.
 

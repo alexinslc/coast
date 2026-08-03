@@ -1,6 +1,6 @@
 # Coast for macOS — Build Plan
 
-Status: implementation and local release preparation complete. Version 0.1.0 build 2 passed all 28 tests and Xcode analysis; its universal Developer ID archive was accepted by Apple, stapled, packaged, and accepted by Gatekeeper after a fresh quarantined extraction. Post-candidate single-instance and UI fixes now pass all 29 tests, live duplicate-launch checks, visual inspection, Release analysis, and a universal Release build. Build 2 is preserved as a rehearsal and must be replaced by a newly notarized build before publication. The remaining release gates are that replacement archive, the expanded manual compatibility matrix, and verification of the exact GitHub/Homebrew distribution path.
+Status: version 0.1.0 build 3 is the verified release artifact. All 29 tests, live duplicate-launch checks, visual inspection, Release analysis, and the universal Release build pass. Apple accepted the Developer ID archive with no issues; its ticket is stapled, and the final quarantined ZIP passes checksum, strict signature, architecture, stapler, and Gatekeeper checks. The remaining release gates are the expanded manual compatibility matrix and verification of the exact GitHub/Homebrew distribution path.
 
 Last reviewed: 2026-08-02
 
@@ -418,14 +418,14 @@ Confirmed:
 - Distribution: direct/outside the Mac App Store with App Sandbox disabled.
 - Public channels: GitHub Releases plus a Homebrew Cask.
 - Trust path: Developer ID signing, Hardened Runtime, Apple notarization, and a stapled ticket.
-- Release signing and notarization credentials are configured in the maintainer's Keychain. Version 0.1.0 build 2 was accepted by Apple under submission `6868b421-1aae-417c-a7c5-abbf8de7e092` and passed local Gatekeeper verification.
+- Release signing and notarization credentials are configured only in the maintainer's Keychain. Version 0.1.0 build 3 was accepted by Apple under submission `5d76183b-8508-4f76-a78e-32a6206e4eb4` and passed local Gatekeeper verification.
 
 The custom Coast application and menu-bar assets are integrated in the asset catalog; editable brand sources remain outside the application bundle in `Design/Brand`.
 
-The following are still needed before the first public release:
+The following destinations are confirmed for the first public release:
 
-- Confirmation of the intended GitHub repository. The current proposed repository is `alexinslc/coast`.
-- Confirmation or creation of the initial Homebrew tap. The current proposal is `alexinslc/homebrew-tap`, with a `coast` cask.
+- Public GitHub repository: `alexinslc/coast`.
+- Maintainer-owned Homebrew tap: `alexinslc/homebrew-tap`, with a `coast` cask.
 
 ## 17. Primary Apple references
 

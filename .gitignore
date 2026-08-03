@@ -6,3 +6,23 @@ dist/
 *.xcuserstate
 xcuserdata/
 .DS_Store
+
+# Credentials and local signing material must remain in Keychain or CI secrets.
+.env
+.env.*
+!.env.example
+*.env
+*.env.*
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.cer
+*.crt
+*.mobileprovision
+*.provisionprofile
+*.keystore
+*.jks
+*.keychain
+*.keychain-db
