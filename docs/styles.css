@@ -38,6 +38,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  height: auto;
 }
 
 a {
@@ -124,7 +125,7 @@ a {
 
 .hero {
   position: relative;
-  min-height: 790px;
+  min-height: 720px;
   overflow: hidden;
   color: var(--white);
   background:
@@ -174,13 +175,14 @@ a {
   grid-template-columns: minmax(0, 1.04fr) minmax(390px, 0.96fr);
   gap: 64px;
   align-items: center;
-  min-height: 790px;
-  padding-top: 115px;
-  padding-bottom: 62px;
+  min-height: 720px;
+  padding-top: 104px;
+  padding-bottom: 44px;
 }
 
 .hero-copy {
   max-width: 660px;
+  min-width: 0;
 }
 
 .eyebrow {
@@ -216,8 +218,8 @@ p {
 
 h1 {
   max-width: 720px;
-  margin-bottom: 25px;
-  font-size: clamp(54px, 6.2vw, 84px);
+  margin-bottom: 22px;
+  font-size: clamp(52px, 5.6vw, 74px);
   font-weight: 650;
   letter-spacing: -0.058em;
   line-height: 0.98;
@@ -232,9 +234,9 @@ h1 span {
 
 .hero-summary {
   max-width: 625px;
-  margin-bottom: 32px;
+  margin-bottom: 26px;
   color: rgba(255, 255, 255, 0.72);
-  font-size: clamp(18px, 2vw, 21px);
+  font-size: clamp(18px, 1.7vw, 20px);
   line-height: 1.55;
 }
 
@@ -338,14 +340,14 @@ h1 span {
 
 .trust-line {
   margin: 16px 0 0;
-  color: rgba(255, 255, 255, 0.43);
+  color: rgba(255, 255, 255, 0.65);
   font-size: 12px;
 }
 
 .hero-art {
   position: relative;
   display: flex;
-  min-height: 520px;
+  min-height: 460px;
   align-items: center;
   justify-content: center;
 }
@@ -554,7 +556,7 @@ h1 span {
 
 .feature-card {
   position: relative;
-  min-height: 380px;
+  min-height: 340px;
   overflow: hidden;
   padding: 36px;
   border: 1px solid rgba(16, 20, 61, 0.07);
@@ -616,7 +618,7 @@ h1 span {
   display: grid;
   width: 78px;
   height: 78px;
-  margin-bottom: 82px;
+  margin-bottom: 54px;
   place-items: center;
   border-radius: 24px;
   background: var(--mist);
@@ -935,7 +937,7 @@ h1 span {
 }
 
 .site-footer {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.68);
   background: #080b29;
 }
 
@@ -963,7 +965,7 @@ h1 span {
   }
 
   .hero-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 20px;
     padding-top: 160px;
   }
@@ -1062,7 +1064,11 @@ h1 span {
 
   .hero-actions .button {
     flex: 1;
-    min-width: 155px;
+    min-width: 0;
+    gap: 8px;
+    padding: 0 14px;
+    font-size: 14px;
+    white-space: nowrap;
   }
 
   .install-command code {
@@ -1070,7 +1076,7 @@ h1 span {
   }
 
   .hero-art {
-    min-height: 390px;
+    min-height: 330px;
   }
 
   .app-icon-wrap {
@@ -1208,6 +1214,16 @@ h1 span {
 
   .site-footer nav {
     flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .button {
+    width: 100%;
   }
 }
 
